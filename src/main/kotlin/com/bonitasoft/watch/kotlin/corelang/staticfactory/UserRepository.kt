@@ -4,7 +4,7 @@ interface UserRepository {
 
     fun getUser(): User
 
-    companion object UserRepositoryProvider: Provider<UserRepository>() {
+    companion object : Provider<UserRepository>() {
         override fun create() = UserRepositoryImpl()
     }
 

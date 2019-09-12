@@ -8,8 +8,8 @@ fun getLatency(): Int {
 }
 
 fun main() {
-    getLatency().takeIf { it < 20 }
+    getLatency().takeIf { it < 15 }
             ?.let {
-                println("can join the game with latency $it")
+                println("Ok to join the game with a low latency of $it")
             }
 }

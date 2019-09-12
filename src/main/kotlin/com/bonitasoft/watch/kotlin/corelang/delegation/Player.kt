@@ -1,6 +1,10 @@
 package com.bonitasoft.watch.kotlin.corelang.delegation
 
 /**
+ * Example to show:
+ *
+ * CLASS DELEGATION (composition pattern)
+ *
  * @author Emmanuel Duchastenier
  */
 interface Player {
@@ -14,21 +18,21 @@ class RpgGamePlayer : Player {
     }
 }
 
-//class WitcherGamePlayer(): Player {
-//    private val delegatePlayer = RpgGamePlayer(name)
-//
-//    override fun playGame() {
-//        delegatePlayer.playGame()
-//    }
-//}
+class WitcherGamePlayer : Player {
+    private val delegatePlayer = RpgGamePlayer()
 
-class WitcherGamePlayer : Player by RpgGamePlayer()
-class HardPlayer(private val player: Player) : Player by player {
     override fun playGame() {
-        println("Arrrhhhh!")
-        player.playGame()
+        delegatePlayer.playGame()
     }
 }
+
+//class WitcherGamePlayer : Player by RpgGamePlayer()
+//class HardPlayer(private val player: Player) : Player by player {
+//    override fun playGame() {
+//        println("Arrrhhhh!")
+//        player.playGame()
+//    }
+//}
 
 fun main() {
     val rpgGamePlayer = RpgGamePlayer()
@@ -37,6 +41,6 @@ fun main() {
     val witcherGamePlayer = WitcherGamePlayer()
     witcherGamePlayer.playGame()
 
-    val hardPlayer = HardPlayer(witcherGamePlayer)
-    hardPlayer.playGame()
+//    val hardPlayer = HardPlayer(witcherGamePlayer)
+//    hardPlayer.playGame()
 }
