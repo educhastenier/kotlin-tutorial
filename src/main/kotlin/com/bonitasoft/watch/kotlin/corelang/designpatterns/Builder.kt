@@ -1,4 +1,4 @@
-package com.bonitasoft.watch.kotlin.corelang.builderpattern
+package com.bonitasoft.watch.kotlin.corelang.designpatterns
 
 data class Dialog(
         val title: String,
@@ -6,7 +6,7 @@ data class Dialog(
         val onAccept: (() -> Unit)? = null
 )
 
-// Usage
+// Usage:
 val dialog1 = Dialog(
         title = "Some title",
         text = "Great dialog",
@@ -23,4 +23,3 @@ fun main() {
     println(dialog2)
     println(dialog3)
 }
-fun add(a: Int, b: Int) = a + b

@@ -4,8 +4,8 @@ package com.bonitasoft.watch.kotlin.corelang.flow
  * @author Emmanuel Duchastenier
  */
 fun isValidType(x: Any): Any = when (x) {
-    is String -> print("It's a string")
-    specialType(x) -> print("It's an acceptable type")
+    is String -> println("It's a string")
+    specialType(x) -> println("It's an acceptable type")
     else -> false
 }
 
@@ -22,16 +22,26 @@ fun main() {
 
     // variable x is OK
     when (x) {
-        is Int -> print(x + 1)
-        is String -> print(x.length + 1)
-        is IntArray -> print(x.sum())
+        is Int -> println(x + 1)
+        is String -> println(x.length + 1)
+        is IntArray -> println(x.sum())
     }
 
     val example = ExampleClass("hello")
     // variable property example.x is not OK, unless casted:
     when (example.x) {
-        is Int -> print(example.x as Int + 1)
-        is String -> print("example.x is of size ${(example.x as String).length}")
-        is IntArray -> print((example.x as IntArray).sum())
+        is Int -> println(example.x as Int + 1)
+        is String -> println("example.x is of size ${(example.x as String).length}")
+        is IntArray -> println((example.x as IntArray).sum())
+    }
+
+    // we can use When alone, as an if-else if alternative:
+    val number = 0
+    val text: String? = null
+    when {
+        number > 5 -> println("number is higher than five")
+        text == "hello" -> println("number is low, but you can say hello")
+        // Else is not even mandatory:
+        // else -> println("none of the above")
     }
 }
