@@ -10,11 +10,13 @@ val sum: Int.(Int) -> Int = {
 fun main() {
     println(5.sum(17))
 
-    var myClass: MyClass? = null
-    println(myClass?.name ?: "toto")
-    println(myClass?.name) // prints null if event is null
-    myClass = MyClass("Manu")
-    println(myClass?.name)
+    var student: Student? = null
+    println(student?.name ?: "toto")
+    println(student?.name)      // prints null if event is null
+    student = Student("Manu")
+
+    @Suppress("UNNECESSARY_SAFE_CALL")
+    println(student?.name)
 }
 
-class MyClass(val name: String)
+class Student(val name: String)

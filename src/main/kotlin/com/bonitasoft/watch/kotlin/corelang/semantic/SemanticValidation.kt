@@ -13,7 +13,7 @@ fun main() {
 
 class User(val name: String?)
 
-fun printName(user: User?){
-    val name = user?.name?:throw IllegalArgumentException("User / its name is null")
+fun printName(user: User?) {
+    val name = user?.name ?: throw IllegalArgumentException("User / its name is null")
     println("Name is $name")
 }

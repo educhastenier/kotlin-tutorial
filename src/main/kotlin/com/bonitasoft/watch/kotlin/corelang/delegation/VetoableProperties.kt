@@ -6,7 +6,7 @@ import kotlin.properties.Delegates
  * @author Emmanuel Duchastenier
  */
 class VetoableProperties {
-    var definition: String by Delegates.vetoable("MyDefinition") { prop, old, new ->
+    var definition: String by Delegates.vetoable("MyDefinition") { _, old, new ->
         val result = new.contains("\u0019")
         if (result) {
             println("/!\\ Invalid value: '$new', keeping the old one: '$old'")

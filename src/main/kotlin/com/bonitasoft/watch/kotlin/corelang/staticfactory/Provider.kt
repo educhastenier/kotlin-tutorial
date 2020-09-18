@@ -5,7 +5,7 @@ abstract class Provider<T> {
 
     abstract fun create(): T
 
-    fun get(): T  = original ?: create().apply { original = this }
+    fun get(): T = original ?: create().apply { original = this }
 //        val t: T = if (original != null) original else create()
 //        original = t
 //        return t
@@ -14,5 +14,5 @@ abstract class Provider<T> {
 //     fun get(): T = mocked ?: original ?: create().apply { original = this }
 //     var mocked: T? = null
 
-     fun lazyGet(): Lazy<T> = lazy { get() }
+    fun lazyGet(): Lazy<T> = lazy { get() }
 }
