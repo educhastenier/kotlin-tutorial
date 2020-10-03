@@ -6,6 +6,7 @@ abstract class Provider<T> {
     abstract fun create(): T
 
     fun get(): T = original ?: create().apply { original = this }
+//    This line above is equivalent to:
 //        val t: T = if (original != null) original else create()
 //        original = t
 //        return t

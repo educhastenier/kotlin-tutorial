@@ -1,14 +1,23 @@
 package com.bonitasoft.watch.kotlin.corelang.designpatterns
 
+import java.util.*
+import kotlin.system.measureTimeMillis
+
 // as "static' does not exist, one cannot create a static getInstance() function to ensure singleton.
 // Singleton in Kotlin is declared using the 'object' keyword.
-
 object GameMaster {
-    private val diceRun = (1..100).shuffled().first()
+    private val diceRun: Int
+
+    init {
+        diceRun = (1..100).shuffled().first()
+        println("Game master ran the 100-face dice and got a $diceRun")
+    }
+
     fun showDice() {
-        println("Game master run the 100-face dice and got a $diceRun")
+        println(diceRun)
     }
 }
+
 //The GameMaster singleton has a random number as member variable.
 //The reason for this random number is to show that there is only one object of the GameMaster class.
 
@@ -39,3 +48,21 @@ class Clazz {
 
 
 // Thx to https://kotlin-code.com for the resources
+
+object SlowSingleton {
+    val value: String
+
+    init {
+        var uuid = ""
+        val total = measureTimeMillis {
+            println("Computing")
+            for (i in 1..1_000_000) {
+                uuid = UUID.randomUUID().toString()
+            }
+        }
+        value = uuid
+        println("Done computing in ${total} ms")
+    }
+}
+
+// Thx to https://proandroiddev.com for the resources

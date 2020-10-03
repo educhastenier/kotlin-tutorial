@@ -6,4 +6,6 @@ fun main() {
 //    }
 
     println(UserRepository.get().getUser())
+    // get() is implicitly called on Companion object:
+    // UserRepository.Companion.get().getUser()
 }
