@@ -5,7 +5,7 @@ import java.security.Security.getProviders
  * @author Emmanuel Duchastenier
  */
 
-fun main(args: Array<String>) {
+fun main() {
 //    val providers = SecurityProviders()
 
 //    val allProviders = providers.getProviders()

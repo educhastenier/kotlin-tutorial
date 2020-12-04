@@ -16,7 +16,7 @@ val dialog2 = Dialog(
     title = "Another dialog",
     text = "I have no buttons"
 )
-val dialog3 = Dialog(title = "Dialog with just a title")
+val dialog3 = Dialog(title = "Dialog with just a title") // 'title =' is optional
 
 fun main() {
     println(dialog1)

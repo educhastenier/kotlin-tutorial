@@ -3,8 +3,16 @@ package com.bonitasoft.watch.kotlin.corelang.designpatterns
 import java.util.*
 import kotlin.system.measureTimeMillis
 
+// Thx to https://kotlin-code.com for the resources
+// Thx to https://proandroiddev.com for the resources
+
 // as "static' does not exist, one cannot create a static getInstance() function to ensure singleton.
 // Singleton in Kotlin is declared using the 'object' keyword.
+
+object JustASingleton {
+    val value: String = "Just a value"
+}
+
 object GameMaster {
     private val diceRun: Int
 
@@ -22,6 +30,7 @@ object GameMaster {
 //The reason for this random number is to show that there is only one object of the GameMaster class.
 
 fun main() {
+    // val gameMaster = GameMaster() => wouldn't compile
     val gameMaster1 = GameMaster
     val gameMaster2 = GameMaster
 
@@ -46,9 +55,6 @@ class Clazz {
     }
 }
 
-
-// Thx to https://kotlin-code.com for the resources
-
 object SlowSingleton {
     val value: String
 
@@ -61,8 +67,6 @@ object SlowSingleton {
             }
         }
         value = uuid
-        println("Done computing in ${total} ms")
+        println("Done computing in $total ms")
     }
 }
-
-// Thx to https://proandroiddev.com for the resources

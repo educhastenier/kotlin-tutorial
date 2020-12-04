@@ -1,27 +1,23 @@
 package com.bonitasoft.watch.kotlin.corelang.designpatterns
 
 class Printer private constructor() {
-    private val randomNumber = (1..100).shuffled().first()
+    private val uniquePrinterId = (1..100).shuffled().first()
 
     companion object /*AvailablePrinter*/ {
-        private val availablePrinter = mutableMapOf<Int, Printer>()
+        private val availablePrinters = mutableMapOf<Int, Printer>()
 
         fun getPrinter(id: Int): Printer {
-            availablePrinter[id] = availablePrinter[id] ?: Printer()
-            return availablePrinter[id]!!
+            availablePrinters[id] = availablePrinters[id] ?: Printer()
+            return availablePrinters[id]!!
         }
     }
 
     fun print() {
-        println("Print page from printer: $randomNumber")
+        println("Print page from printer: $uniquePrinterId")
     }
 }
 
-fun main() {
-    Printer.getPrinter(17).print()
-    Printer.getPrinter(17).print()
-    Printer.getPrinter(9).print()
-}
+// test under MultitonTest
 
 
 // Thx to https://kotlin-code.com for the resources

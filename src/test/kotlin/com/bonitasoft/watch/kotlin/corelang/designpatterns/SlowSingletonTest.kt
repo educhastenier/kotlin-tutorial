@@ -13,7 +13,7 @@ internal class SlowSingletonTest {
         println("Test started")
         for (i in 1..3) {
             val total = measureTimeMillis {
-                println(SlowSingleton.value)
+                println("Singleton value: ${SlowSingleton.value}")
             }
             println("Took $total ms")
         }

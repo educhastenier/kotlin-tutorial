@@ -10,13 +10,12 @@ internal class DecoratorTest {
 
     @Test
     fun testDecorator() {
-        val map = HappyMap<String, String>()
+        val map = TalkativeMap<String, String>()
         map["A"] = "B"
         map["B"] = "C"
         map["A"] = "C"
         map.remove("A")
-        map["A"] = "C"
-        assertEquals(mapOf("A" to "C", "B" to "C"), map.map)
-//        assertEquals(listOf("Yay! A", "Yay! B", "Yay! A"), map.values)
+        map["A"] = "D"
+        assertEquals(mapOf("A" to "D", "B" to "C"), map.map)
     }
 }
