@@ -1,9 +1,9 @@
-package com.bonitasoft.watch.kotlin.corelang
+package com.bonitasoft.watch.kotlin.corelang.designpatterns
 
 /**
  * @author Emmanuel Duchastenier
  */
-data class Process(
+/*data*/ class Process(
     private var name: String? = null,
     private var priority: Int? = null
 ) {
@@ -21,5 +21,11 @@ data class Process(
 }
 
 fun main() {
-    println(Process().setName("toto").setPriority(17))
+    println(Process().setName("sudo").setPriority(17))
+
+    Process().apply {
+        setName("sudo")
+        setPriority(17)
+    }
+
 }

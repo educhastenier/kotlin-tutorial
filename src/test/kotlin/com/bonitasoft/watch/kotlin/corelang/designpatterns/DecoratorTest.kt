@@ -16,6 +16,6 @@ internal class DecoratorTest {
         map["A"] = "C"
         map.remove("A")
         map["A"] = "D"
-        assertEquals(mapOf("A" to "D", "B" to "C"), map.map)
+        assertEquals(mapOf("A" to "D", "B" to "C"), map)
     }
 }

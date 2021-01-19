@@ -61,7 +61,7 @@ object SlowSingleton {
     init {
         var uuid = ""
         val total = measureTimeMillis {
-            println("Computing")
+            println("Beginning computation...")
             for (i in 1..1_000_000) {
                 uuid = UUID.randomUUID().toString()
             }
@@ -70,3 +70,4 @@ object SlowSingleton {
         println("Done computing in $total ms")
     }
 }
+// test in SlowSingletonTest.kt

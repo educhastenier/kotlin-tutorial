@@ -11,7 +11,7 @@ internal class StrategyTest {
     fun test_strategy_override() {
         val someAnimal = UncertainAnimal()
         var sound = someAnimal.makeSound()
-        assert(sound == "Meow!") { "Wrong animal sound!" }
+        assert(sound == "Meow!") // { "Wrong animal sound!" }
         someAnimal.makeSound = { "Woof!" }
         sound = someAnimal.makeSound()
         assert(sound == "Woof!")
