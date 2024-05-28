@@ -7,7 +7,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 fun main() {
-//    launchWithChannel()
+    launchWithChannel()
+
     // another way to do the same things:
     launchWithActor()
 }

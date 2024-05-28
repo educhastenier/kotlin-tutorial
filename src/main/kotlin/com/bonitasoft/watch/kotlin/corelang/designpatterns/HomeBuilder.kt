@@ -3,14 +3,12 @@ package com.bonitasoft.watch.kotlin.corelang.designpatterns
 /**
  * @author Emmanuel Duchastenier
  */
-/*data*/ class Process(
+data class Process(
     private var name: String? = null,
-    private var priority: Int? = null
+    private var priority: Int? = null,
 ) {
 
-    fun setName(name: String): Process = apply {
-        this.name = name
-    }
+    fun setName(name: String) = apply { this.name = name }
 
     //    fun setPriority(priority: Int): Process {
 //        this.priority = priority

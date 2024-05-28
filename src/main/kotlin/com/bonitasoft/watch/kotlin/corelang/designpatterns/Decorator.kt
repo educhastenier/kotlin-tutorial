@@ -7,11 +7,11 @@ class TalkativeMap<K, V>(val map: MutableMap<K, V> = mutableMapOf()) : MutableMa
 
     override fun put(key: K, value: V): V? {
         return map.put(key, value)
-//            .apply {
-//            if (this == null) {
-//                println("$key was empty when putting $value")
-//            }
-//        }
+            .apply {
+            if (this == null) {
+                println("$key was empty when putting $value")
+            }
+        }
     }
 
 }
