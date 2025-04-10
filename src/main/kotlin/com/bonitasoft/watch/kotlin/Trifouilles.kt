@@ -1,3 +1,7 @@
+
+// for demonstration purposes:
+@file:Suppress("KotlinConstantConditions")
+
 package com.bonitasoft.watch.kotlin
 
 val sum: Int.(Int) -> Int = {
